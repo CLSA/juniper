@@ -25,7 +25,7 @@ async function sendToCypress( module, params ) {
   let result = null;
   let success = false;
   try {
-    result = await exec( 'ping 127.0.0.1 -n 3' );
+    result = await exec( 'sleep 3' );
     success = true;
   } catch( err ) {
     result = err;
@@ -37,22 +37,24 @@ async function sendToCypress( module, params ) {
     ( success ? 'completed with result' : 'failed with error' ) +
     ':\n' + result.stdout
   );
+
+  return success;
 }
 
 // Start the spirometer
-app.post( '/spirometer', ( req, res ) => {
+app.post( '/spirometer', async ( req, res ) => {
   console.log( 'POST /spirometer request received from ' + getAddress( req ) );
-  sendToCypress( 'spirometer', '-a ' + req.body.key1 + ' -b ' + req.body.key2 );
+  let response = await sendToCypress( 'spirometer', '-a ' + req.body.key1 + ' -b ' + req.body.key2 );
   console.log( 'POST /spirometer request processed' );
-  res.sendStatus( 200 );
+  res.send( response ? 'true' : 'false' );
 } );
 
 // Start the cognitive
-app.post( '/cognitive', ( req, res ) => {
+app.post( '/cognitive', async ( req, res ) => {
   console.log( 'POST /cognitive request received from ' + getAddress( req ) );
-  sendToCypress( 'cognitive', '-a ' + req.body.key1 + ' -b ' + req.body.key2 );
+  let response = await sendToCypress( 'cognitive', '-a ' + req.body.key1 + ' -b ' + req.body.key2 );
   console.log( 'POST /cognitive request processed' );
-  res.sendStatus( 200 );
+  res.send( response ? 'true' : 'false' );
 } );
 
 // Start the server
