@@ -11,7 +11,7 @@ app.use( express.json() );
 
 // An easy way to confirm that Juniper is running
 app.get( '/', (req, res) => {
-  res.send( 'Juniper is online' );
+  res.send( '"Juniper is online"' );
 } );
 
 // Returns the remote address from the request object
