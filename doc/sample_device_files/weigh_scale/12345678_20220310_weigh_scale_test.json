@@ -1,0 +1,31 @@
+{
+    "device": {
+        "port_description": "simulated",
+        "port_manufacturer": "simulated",
+        "port_name": "simulated",
+        "port_product_id": "simulated",
+        "port_serial_number": "simulated",
+        "port_system_location": "simulated",
+        "port_vendor_id": "simulated",
+        "software_id": "999999"
+    },
+    "test_results": [
+        {
+            "mode": "gross",
+            "timestamp": "2022-03-10T16:10:05.087",
+            "weight": {
+                "units": "kg",
+                "value": 77.1
+            }
+        },
+        {
+            "mode": "gross",
+            "timestamp": "2022-03-10T16:10:05.821",
+            "weight": {
+                "units": "kg",
+                "value": 77.1
+            }
+        }
+    ],
+    "verification_barcode": "12345678"
+}

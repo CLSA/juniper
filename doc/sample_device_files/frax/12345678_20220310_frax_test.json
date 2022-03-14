@@ -1,0 +1,58 @@
+{
+    "test_input": {
+        "barcode": "12345678",
+        "language": "english"
+    },
+    "test_meta_data": {
+        "age": {
+            "units": "yr",
+            "value": 56.19
+        },
+        "alcohol": 0,
+        "bmi": {
+            "units": "kg/m2",
+            "value": 34.07
+        },
+        "country_code": 19,
+        "current_smoker": 0,
+        "femoral_neck_bmd": -2,
+        "gluccocorticoid": 0,
+        "parent_hip_fracture": 0,
+        "previous_fracture": 0,
+        "rheumatoid_arthritis": 0,
+        "secondary_osteoporosis": 0,
+        "sex": 0,
+        "type": "t"
+    },
+    "test_results": [
+        {
+            "probability": {
+                "units": "%",
+                "value": 18.475002187181214
+            },
+            "type": "osteoporotic_fracture"
+        },
+        {
+            "probability": {
+                "units": "%",
+                "value": 7.833621670115717
+            },
+            "type": "hip_fracture"
+        },
+        {
+            "probability": {
+                "units": "%",
+                "value": 14.051725646331873
+            },
+            "type": "osteoporotic_fracture_bmd"
+        },
+        {
+            "probability": {
+                "units": "%",
+                "value": 4.820690258532749
+            },
+            "type": "hip_fracture_bmd"
+        }
+    ],
+    "verification_barcode": "12345678"
+}

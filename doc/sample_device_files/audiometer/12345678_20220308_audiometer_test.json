@@ -1,0 +1,120 @@
+{
+    "device": {
+        "port_description": "simulated",
+        "port_manufacturer": "simulated",
+        "port_name": "ttyUSB0",
+        "port_product_id": "simulated",
+        "port_serial_number": "simulated",
+        "port_system_location": "simulated",
+        "port_vendor_id": "simulated"
+    },
+    "test_meta_data": {
+        "last_calibration_date": "2020-04-01",
+        "patient_id": "12345678",
+        "test_datetime": "2022-03-08T11:29:00.000",
+        "test_id": "00055801011124431"
+    },
+    "test_results": [
+        {
+            "level": {
+                "units": "dB",
+                "value": 35
+            },
+            "side": "left",
+            "test": "1 kHz Test"
+        },
+        {
+            "level": {
+                "units": "dB",
+                "value": 10
+            },
+            "side": "left",
+            "test": "500 Hz"
+        },
+        {
+            "error": "NO_THRESHOLD_1K",
+            "outcome": "REINSTRUCT_SUBJECT",
+            "side": "left",
+            "test": "1 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "left",
+            "test": "2 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "left",
+            "test": "3 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "left",
+            "test": "4 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "left",
+            "test": "6 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "left",
+            "test": "8 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "right",
+            "test": "1 kHz Test"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "right",
+            "test": "500 Hz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "right",
+            "test": "1 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "right",
+            "test": "2 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "right",
+            "test": "3 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "right",
+            "test": "4 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "right",
+            "test": "6 kHz"
+        },
+        {
+            "error": "NOT_TESTED",
+            "outcome": "RUN_TEST",
+            "side": "right",
+            "test": "8 kHz"
+        }
+    ],
+    "verification_barcode": "12345678"
+}

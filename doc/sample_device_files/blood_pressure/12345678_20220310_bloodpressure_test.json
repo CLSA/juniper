@@ -1,0 +1,158 @@
+{
+    "device": {
+        "usb_hid_manufacturer": "BpTru",
+        "usb_hid_product": "BPM200",
+        "usb_hid_product_id": 1,
+        "usb_hid_serial_number": "simulated",
+        "usb_hid_vendor_id": 4279
+    },
+    "test_meta_data": {
+        "avg_count": 5,
+        "avg_diastolic": {
+            "units": "mmHg",
+            "value": 70
+        },
+        "avg_pulse": {
+            "units": "bpm",
+            "value": 80
+        },
+        "avg_systolic": {
+            "units": "mmHg",
+            "value": 99
+        },
+        "cuff_size": "small",
+        "first_diastolic": {
+            "units": "mmHg",
+            "value": 74
+        },
+        "first_end_time": "2022-03-10T15:54:58.989",
+        "first_pulse": {
+            "units": "bpm",
+            "value": 79
+        },
+        "first_start_time": "2022-03-10T15:53:59.927",
+        "first_systolic": {
+            "units": "mmHg",
+            "value": 103
+        },
+        "side": "left",
+        "total_avg_count": 7,
+        "total_avg_diastolic": {
+            "units": "mmHg",
+            "value": 60
+        },
+        "total_avg_pulse": {
+            "units": "bpm",
+            "value": 69
+        },
+        "total_avg_systolic": {
+            "units": "mmHg",
+            "value": 86
+        }
+    },
+    "test_results": [
+        {
+            "diastolic": {
+                "units": "mmHg",
+                "value": 74
+            },
+            "end_time": "2022-03-10T15:54:58.989",
+            "pulse": {
+                "units": "bpm",
+                "value": 79
+            },
+            "reading_number": 1,
+            "start_time": "2022-03-10T15:53:59.927",
+            "systolic": {
+                "units": "mmHg",
+                "value": 103
+            }
+        },
+        {
+            "diastolic": {
+                "units": "mmHg",
+                "value": 76
+            },
+            "end_time": "2022-03-10T15:56:30.591",
+            "pulse": {
+                "units": "bpm",
+                "value": 81
+            },
+            "reading_number": 2,
+            "start_time": "2022-03-10T15:54:58.989",
+            "systolic": {
+                "units": "mmHg",
+                "value": 110
+            }
+        },
+        {
+            "diastolic": {
+                "units": "mmHg",
+                "value": 64
+            },
+            "end_time": "2022-03-10T15:58:06.468",
+            "pulse": {
+                "units": "bpm",
+                "value": 76
+            },
+            "reading_number": 3,
+            "start_time": "2022-03-10T15:56:30.591",
+            "systolic": {
+                "units": "mmHg",
+                "value": 91
+            }
+        },
+        {
+            "diastolic": {
+                "units": "mmHg",
+                "value": 79
+            },
+            "end_time": "2022-03-10T15:59:32.256",
+            "pulse": {
+                "units": "bpm",
+                "value": 91
+            },
+            "reading_number": 4,
+            "start_time": "2022-03-10T15:58:06.468",
+            "systolic": {
+                "units": "mmHg",
+                "value": 95
+            }
+        },
+        {
+            "diastolic": {
+                "units": "mmHg",
+                "value": 62
+            },
+            "end_time": "2022-03-10T16:00:31.243",
+            "pulse": {
+                "units": "bpm",
+                "value": 69
+            },
+            "reading_number": 5,
+            "start_time": "2022-03-10T15:59:32.256",
+            "systolic": {
+                "units": "mmHg",
+                "value": 107
+            }
+        },
+        {
+            "diastolic": {
+                "units": "mmHg",
+                "value": 68
+            },
+            "end_time": "2022-03-10T16:01:57.721",
+            "pulse": {
+                "units": "bpm",
+                "value": 85
+            },
+            "reading_number": 6,
+            "start_time": "2022-03-10T16:00:31.243",
+            "systolic": {
+                "units": "mmHg",
+                "value": 93
+            }
+        }
+    ],
+    "verification_barcode": "12345678"
+}
