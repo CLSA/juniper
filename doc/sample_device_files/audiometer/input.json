@@ -1,5 +1,5 @@
 {
   "barcode":"12345678",
   "language":"english",
-  "interviewer_id":"jdoe"
+  "interviewer":"jdoe"
 }

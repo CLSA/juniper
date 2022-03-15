@@ -1,3 +1,14 @@
+const fs = require( 'fs' );
+const util = require( 'util' );
+const exec = util.promisify( require( 'child_process' ).exec );
+
+/**
+ * Determines if a variable is an object (null is not considered an object by this function)
+ * 
+ * @param mixed value
+ */
+exports.isObject = ( value ) => value !== null && 'object' === typeof value;
+
 /**
  * Returns the remote address from the request object
  * 
@@ -6,27 +17,49 @@
 exports.getAddress = ( req ) => req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
 /**
- * The execution function used to communicate with Cypress
+ * Determines the data directory to write files given the device name and barcode
  * 
- * @param string module The name fo the module to communicate with
+ * Note that this will create the directory if it doesn't already exist.
+ * @param string deviceName The name of the device
+ * @param string barcode The barcode identifying the participant
  */
-exports.sendToCypress = async ( module ) => {
-  console.log( 'Sending "' + module + '" command to cypress' );
-  let result = null;
-  let success = false;
-  try {
-    result = await exec( 'sleep 3' );
-    success = true;
-  } catch( err ) {
-    result = err;
+exports.getDataDir = ( deviceName, barcode ) => {
+  // first make sure the device's directory exists
+  const deviceDir = global.DATADIR + '/' + deviceName;
+  if( !fs.existsSync( deviceDir ) ) fs.mkdirSync( deviceDir );
+
+  // next make sure the participant's directory exists
+  const dataDir = deviceDir + '/' + barcode;
+  if( !fs.existsSync( dataDir ) ) fs.mkdirSync( dataDir );
+
+  return dataDir;
+}
+
+/**
+ * Executes the cypress command
+ * 
+ * @param string deviceName The name fo the device to communicate with
+ * @param string barcode The barcode identifying the participant
+ * @param object args Additional arguments to use when running Cypress
+ * @return mixed True if successful, a string describing the error if not.
+ */
+exports.runCypress = async ( deviceName, barcode, args ) => {
+  console.log( 'Sending "' + deviceName + '" command to cypress' );
+
+  // build the command line argument string
+  let argString = util.format( '-m "%s"', deviceName );
+  if( exports.isObject( args ) ) for( const key in args ) { argString += ' ' + key + ' "' + args[key] + '"'; }
+
+  let result = true;
+
+  if( global.TESTMODE ) {
+    // write the sample file to the output var
+    const data = fs.readFileSync( ['doc', 'sample_device_files', deviceName, 'output.json'].join( '/' ), 'utf8' );
+    fs.writeFileSync( exports.getDataDir( deviceName, barcode ) + '/output.json', data );
+    await exec( 'sleep 2' );
+  } else {
+    result = 'Cypress is not yet implemented.';
   }
 
-  // note that result has stdout and stderr, either of which may be helpful
-  console.log(
-    'Command "' + module + '" ' +
-    ( success ? 'completed with result' : 'failed with error' ) +
-    ':\n' + result.stdout
-  );
-
-  return success;
+  return result;
 };

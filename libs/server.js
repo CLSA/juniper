@@ -1,20 +1,23 @@
 const express = require( 'express' );
-const devices = require( './libs/devices' );
-
-// used to run processes on the local machine
-const util = require( 'util' );
-const exec = util.promisify( require( 'child_process' ).exec );
+const tools = require( './tools' );
+const devices = require( './devices' );
 const app = express();
 
 // used to decode request body into json data
 app.use( express.json() );
 
-// An easy way to confirm that Juniper is running
+global.TESTMODE = 2 < process.argv.length && 'test' == process.argv[2];
+global.DATADIR = process.cwd() + '/data';
+
+// Define all endpoints
 app.get( '/', ( req, res ) => res.send( '"Juniper is online"' ) );
 
 for( const name in devices ) {
   console.log( 'Creating ' + name + ' endpoint' );
-  app.post( '/'+name, async ( req, res ) => devices[name].start( req, res ) );
+  app.post( '/'+name, async ( req, res ) => {
+    console.log( 'POST /' + name + ' request received from ' + tools.getAddress( req ) );
+    await devices[name].start( req, res )
+  } );
 }
 
 // Start the server
