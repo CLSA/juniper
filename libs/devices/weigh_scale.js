@@ -1,6 +1,6 @@
 const fs = require( 'fs' );
 const tools = require( '../tools.js' );
-const deviceName = 'weight_scale';
+const deviceName = 'weigh_scale';
 
 /**
  * Start the audiometer device
