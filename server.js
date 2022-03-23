@@ -1,6 +1,6 @@
 const express = require( 'express' );
-const tools = require( './tools' );
-const devices = require( './devices' );
+const tools = require( './src/tools' );
+const devices = require( './src/devices' );
 const app = express();
 
 // used to decode request body into json data
