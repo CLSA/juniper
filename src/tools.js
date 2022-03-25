@@ -58,7 +58,8 @@ exports.runCypress = async ( deviceName, barcode, args ) => {
     fs.writeFileSync( exports.getDataDir( deviceName, barcode ) + '/output.json', data );
     await exec( 'sleep 2' );
   } else {
-    result = 'Cypress is not yet implemented.';
+    var response = await exec( `Cypress -m simulate -t ${deviceName}` );
+    console.log( response );
   }
 
   return result;

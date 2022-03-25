@@ -7,7 +7,8 @@ const app = express();
 app.use( express.json() );
 
 global.TESTMODE = 2 < process.argv.length && 'test' == process.argv[2];
-global.DATADIR = process.cwd() + '/data';
+//global.DATADIR = process.cwd() + '/data';
+global.DATADIR = 'C:\\files\\build\\cypress\\cypress\\debug'; // TESTING ONLY
 
 // Define all endpoints
 app.get( '/', ( req, res ) => res.send( '"Juniper is online"' ) );
