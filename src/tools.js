@@ -25,7 +25,7 @@ exports.getAddress = ( req ) => req.headers['x-forwarded-for'] || req.connection
  */
 exports.getDataDir = ( deviceName, barcode ) => {
   // first make sure the device's directory exists
-  const deviceDir = global.DATADIR + '/' + deviceName;
+  const deviceDir = process.env.DATADIR + '/' + deviceName;
   if( !fs.existsSync( deviceDir ) ) fs.mkdirSync( deviceDir );
 
   // next make sure the participant's directory exists
